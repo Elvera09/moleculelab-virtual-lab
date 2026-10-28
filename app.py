@@ -170,7 +170,7 @@ elif page == "Structure Visualizer":
         mol=get_mol(smiles.strip())
         if mol:
             st.success("SMILES parsed successfully.")
-            st.image("data:image/svg+xml;utf8,"+draw_svg(mol,600),use_container_width=True)
+            st.components.v1.html(draw_svg(mol, 600), height=450, scrolling=False)
             st.code(Chem.MolToSmiles(mol))
         else: st.error("Invalid SMILES. Check the notation and try again.")
 
