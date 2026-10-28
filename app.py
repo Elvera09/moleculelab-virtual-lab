@@ -155,7 +155,7 @@ elif page == "Molecule Explorer":
             mol=get_mol(item["smiles"])
             if mol:
                 a,b=st.columns([1,1.4])
-                with a: st.image("data:image/svg+xml;utf8,"+draw_svg(mol),use_container_width=True)
+                with a: st.components.v1.html(draw_svg(mol, 350), height=300, scrolling=False)
                 with b:
                     st.write(item["note"])
                     st.code(item["smiles"],language=None)
