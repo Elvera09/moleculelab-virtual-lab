@@ -176,8 +176,7 @@ elif page == "Molecule Explorer":
             mol=get_mol(item["smiles"])
             if mol:
                 a,b=st.columns([1,1.4])
-                with a: st.components.v1.html(draw_svg(mol, 350), height=300, scrolling=False)
-                with b:
+                with a: st.components.v1.html(draw_svg(mol, 250), height=260, scrolling=False)
                     st.write(item["note"])
                     st.code(item["smiles"],language=None)
                     st.dataframe(pd.DataFrame(list(descriptors(mol).items()),columns=["Property","Value"]),hide_index=True,use_container_width=True)
@@ -191,7 +190,7 @@ elif page == "Structure Visualizer":
         mol=get_mol(smiles.strip())
         if mol:
             st.success("SMILES parsed successfully.")
-            st.components.v1.html(draw_svg(mol, 350), height=300, scrolling=False)
+            st.components.v1.html(draw_svg(mol, 250), height=260, scrolling=False)
             st.code(Chem.MolToSmiles(mol))
         else: st.error("Invalid SMILES. Check the notation and try again.")
 
