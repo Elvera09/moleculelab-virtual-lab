@@ -175,7 +175,7 @@ elif page == "Molecule Explorer":
         with st.expander(f"🧬 {item['name']}  ·  {item['category']}"):
             mol=get_mol(item["smiles"])
             if mol:
-                                a, b = st.columns([1, 1.4])
+             a, b = st.columns([1, 1.4])
                 with a:
                     st.components.v1.html(
                         draw_svg(mol, 250),
