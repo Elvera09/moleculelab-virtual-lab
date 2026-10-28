@@ -175,13 +175,22 @@ elif page == "Molecule Explorer":
         with st.expander(f"🧬 {item['name']}  ·  {item['category']}"):
             mol=get_mol(item["smiles"])
             if mol:
-                a,b=st.columns([1,1.4])
-                with a: st.components.v1.html(draw_svg(mol, 250), height=260, scrolling=False)
+                                a, b = st.columns([1, 1.4])
+                with a:
+                    st.components.v1.html(
+                        draw_svg(mol, 250),
+                        height=260,
+                        scrolling=False
+                    )
+                with b:
                     st.write(item["note"])
-                    st.code(item["smiles"],language=None)
-                    st.dataframe(pd.DataFrame(list(descriptors(mol).items()),columns=["Property","Value"]),hide_index=True,use_container_width=True)
-            else: st.error("This example's SMILES could not be parsed; verify the source structure.")
-
+                    st.code(item["smiles"], language=None)
+                    st.dataframe(
+                        pd.DataFrame(
+                            list(descriptors(mol).items()),
+                            columns=["Property", "Value"]
+                        )
+                    )
 elif page == "Structure Visualizer":
     st.markdown("<div class='hero'><div class='eyebrow'>STRUCTURE WORKSPACE</div><h1>Structure <span>Visualizer</span></h1><p>Enter a SMILES string to render a 2D molecular structure.</p></div>",unsafe_allow_html=True)
     default=MOLECULES[0]["smiles"]
