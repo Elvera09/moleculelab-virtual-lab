@@ -50,6 +50,14 @@ div.stButton > button:hover { border-color:#8061ff; color:white; box-shadow:0 5p
 .stTextInput input, .stSelectbox div[data-baseweb="select"], .stTextArea textarea { border-radius:13px!important; }
 div[data-testid="stMetric"] { background:rgba(255,255,255,.68); border:1px solid white; padding:14px; border-radius:16px; }
 hr { border-color:rgba(110,130,200,.18); }
+.stTextInput input,
+.stTextArea textarea,
+div[data-baseweb="input"] input,
+div[data-baseweb="textarea"] textarea {
+    background-color: #262630 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
