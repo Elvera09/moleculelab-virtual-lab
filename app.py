@@ -70,7 +70,7 @@ div[data-baseweb="textarea"] textarea {
     background-color: #262630 !important;
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
-}
+}a
 </style>
 """, unsafe_allow_html=True)
 
@@ -94,7 +94,20 @@ MOLECULES = [
 def get_mol(smiles):
     mol = Chem.MolFromSmiles(smiles)
     return mol
+def draw_3d(mol):
+    from rdkit.Chem import AllChem
+    from rdkit import Chem
 
+    mol = Chem.AddHs(mol)
+    result = AllChem.EmbedMolecule(mol, randomSeed=42)
+
+    if result != 0:
+        return None
+
+    AllChem.MMFFOptimizeMolecule(mol, maxIters=100)
+
+    return Chem.MolToMolBlock(mol)
+ 
 def descriptors(mol):
     return {
         "Molecular formula": rdMolDescriptors.CalcMolFormula(mol),
