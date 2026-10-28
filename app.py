@@ -154,7 +154,11 @@ if page == "Home":
     with right:
         m=get_mol(MOLECULES[0]["smiles"])
         st.markdown("<div class='glass'><div class='section-title'>✦ Featured molecule</div><h3>Aspirin</h3><p class='small-muted'>A familiar example for learning molecular descriptors.</p></div>",unsafe_allow_html=True)
-        st.image("data:image/svg+xml;utf8," + draw_svg(m), use_container_width=True)
+        st.components.v1.html(
+    draw_svg(m, 280),
+    height=310,
+    scrolling=False
+        )
         st.dataframe(pd.DataFrame(list(descriptors(m).items()),columns=["Property","Value"]),hide_index=True,use_container_width=True)
     st.markdown("<div class='section-title'>Explore your lab</div>",unsafe_allow_html=True)
     cards=st.columns(4)
