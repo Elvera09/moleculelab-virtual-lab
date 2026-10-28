@@ -24,6 +24,19 @@ html, body, [class*="css"] { font-family: Inter, sans-serif; }
 section[data-testid="stSidebar"] {
     background: #171827 !important;
     border-right: 1px solid #303149;
+    color: #ffffff !important;
+}
+
+section[data-testid="stSidebar"] * {
+    color: #ffffff !important;
+}
+
+section[data-testid="stSidebar"] label,
+section[data-testid="stSidebar"] p,
+section[data-testid="stSidebar"] span,
+section[data-testid="stSidebar"] div,
+section[data-testid="stSidebar"] a {
+    color: #ffffff !important;
 }
 .glass {
  background:rgba(255,255,255,.62); border:1px solid rgba(255,255,255,.9);
