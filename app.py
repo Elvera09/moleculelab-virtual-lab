@@ -107,12 +107,16 @@ def descriptors(mol):
         "Rotatable bonds": int(Lipinski.NumRotatableBonds(mol)),
     }
 
-def draw_svg(mol, size=450):
+def draw_svg(mol, size=300):
     from rdkit.Chem import rdDepictor
+
     rdDepictor.Compute2DCoords(mol)
+
     drawer = rdMolDraw2D.MolDraw2DSVG(size, size)
+    drawer.drawOptions().padding = 0.12
     drawer.DrawMolecule(mol)
     drawer.FinishDrawing()
+
     return drawer.GetDrawingText()
 
 with st.sidebar:
