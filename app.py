@@ -131,7 +131,7 @@ if page == "Home":
     st.write("")
     left,right=st.columns([1.15,1])
     with left:
-        st.markdown("<div class='glass'><div class='section-title'>✨ Quick Molecule Search</div><p class='small-muted'>Choose a molecule to explore its structure and calculated properties.</p></div>",unsafe_allow_html=True)
+        st.markdown("<div class='glass'><div class='section-title'> Quick Molecule Search</div><p class='small-muted'>Choose a molecule to explore its structure and calculated properties.</p></div>",unsafe_allow_html=True)
        selected=st.selectbox("Popular molecules", [m["name"] for m in MOLECULES])
         if st.button("Explore selected molecule →", use_container_width=True):
             st.session_state["selected_molecule"]=selected
