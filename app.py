@@ -55,11 +55,8 @@ hr { border-color:rgba(110,130,200,.18); }
 div[data-baseweb="input"] input,
 div[data-baseweb="textarea"] textarea {
     background-color: #262630 !important;
-    color: #ffffff !important;st
-    -webkit-text-fill-color: #ffffff !important;
-}
-[data-testid="stSidebar"] * {
     color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -131,8 +128,8 @@ if page == "Home":
     st.write("")
     left,right=st.columns([1.15,1])
     with left:
-        st.markdown("<div class='glass'><div class='section-title'> Quick Molecule Search</div><p class='small-muted'>Choose a molecule to explore its structure and calculated properties.</p></div>",unsafe_allow_html=True)
-       selected=st.selectbox("Popular molecules", [m["name"] for m in MOLECULES])
+        st.markdown("<div class='glass'><div class='section-title'>✨ Quick Molecule Search</div><p class='small-muted'>Choose a molecule to explore its structure and calculated properties.</p></div>",unsafe_allow_html=True)
+        selected=st.selectbox("Popular molecules", [m["name"] for m in MOLECULES])
         if st.button("Explore selected molecule →", use_container_width=True):
             st.session_state["selected_molecule"]=selected
             st.session_state["page_from_home"]=True
