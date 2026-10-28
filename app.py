@@ -22,8 +22,8 @@ html, body, [class*="css"] { font-family: Inter, sans-serif; }
 }
 .block-container { padding-top:1.2rem; max-width:1450px; }
 section[data-testid="stSidebar"] {
- background:linear-gradient(180deg,rgba(255,255,255,.83),rgba(223,232,255,.78));
- border-right:1px solid rgba(255,255,255,.8);
+    background: #171827 !important;
+    border-right: 1px solid #303149;
 }
 .glass {
  background:rgba(255,255,255,.62); border:1px solid rgba(255,255,255,.9);
